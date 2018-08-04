@@ -1,0 +1,42 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+#task-list {
+  width: 750px; }
+
+.task {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #000;
+  padding: 16px; }
+  .task:first-of-type {
+    border-radius: 4px 4px 0 0; }
+  .task:last-of-type {
+    border-radius: 0 0 4px 4px; }
+  .task:not(:last-of-type) {
+    border-bottom: 0; }
+  .task .teamweek {
+    width: 200px; }
+  .task .teamweek-task-title, .task .teamweek-project {
+    margin: 0 16px 0 0; }
+  .task .teamweek-checkboxes {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    flex: 1; }
+    .task .teamweek-checkboxes .todo {
+      flex: 100%; }
+  .task .toggl {
+    cursor: pointer; }
+
+.fa-play-circle {
+  color: #007920; }
+
+.fa-pause-circle {
+  color: #df1a21; }
+
+/*# sourceMappingURL=style.css.map */
