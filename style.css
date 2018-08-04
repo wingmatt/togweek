@@ -1,7 +1,8 @@
 body {
   display: flex;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  height: 100vh; }
 
 #task-list {
   width: 750px; }
@@ -30,6 +31,8 @@ body {
     flex: 1; }
     .task .teamweek-checkboxes .todo {
       flex: 100%; }
+    .task .teamweek-checkboxes .done {
+      text-decoration: strikethrough; }
   .task .toggl {
     cursor: pointer; }
 

@@ -2,6 +2,7 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	height: 100vh;
 }
 	#task-list {
 	width: 750px;
@@ -35,6 +36,9 @@ body {
 		flex: 1;
 		.todo {
 			flex: 100%;
+		}
+		.done {
+			text-decoration:strikethrough;
 		}
 	}
 	.toggl {
