@@ -27,6 +27,7 @@ body {
 	box-shadow: .25em .25em 1em rgba(0,0,0,.5);
 	border-radius: 1em 0 1em 0;
 	padding: 0;
+	position: relative;
 	@media screen and (max-width:768px) {
 		width: 100%;
 	}
@@ -106,4 +107,14 @@ body {
 }
 .fa-pause-circle {
 	//color: #df1a21;
+}
+#time {
+	position: absolute;
+	top: -2.5em;
+	width: 100%;
+	text-align: center;
+	font-family: $font-cond;
+	font-weight: 300;
+	text-shadow: 1px 2px 3px rgba(0,0,0,.25);
+	font-size: 3em;
 }
