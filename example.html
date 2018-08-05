@@ -8,6 +8,28 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	</head>
 	<body>
+		<div id="menu">
+			<div class="wrap-collabsible">
+		  <input id="collapsible" class="toggle" type="checkbox">
+		  <label for="collapsible" class="lbl-toggle"><i class="fas fa-bars"></i>&nbsp;Menu</label>
+		  <div class="collapsible-content">
+		    <div class="content-inner">
+		      <p>
+		        Enter your API Keys to make this work:
+		      </p>
+					<form>
+						<label for="field-teamweek-api">Teamweek API Key</label>
+						<input type="text" id="field-teamweek-api">
+						<label for="field-toggl-api">Toggl API Key</label>
+						<input type="text" id="field-toggl-api">
+						<button type="submit">
+							<i class="fas fa-hdd"></i>&nbsp;Save
+						</button>
+					</form>
+		    </div>
+		  </div>
+		</div>
+		</div>
 		<ul id="task-list">
 			<h1 id="time"></h1>
 			<li id="task-1" class="task">
