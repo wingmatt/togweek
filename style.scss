@@ -2,6 +2,9 @@ $font-main: 'Roboto', sans-serif;
 $font-cond: 'Roboto Condensed', sans-serif;
 $font-mono: 'Roboto Mono', monospace;
 
+$color-blue: #0f4c85;
+$color-blue-light: #197FDF;
+
 @mixin flex($h-align:center, $v-align:center, $wrap:wrap) {
 	display: flex;
 	justify-content: $h-align;
@@ -16,9 +19,14 @@ body {
 	height: 100vh;
 	font-family: $font-main;
 	font-size: 16px;
+	line-height: 1;
 }
 	#task-list {
 	width: 50%;
+	background: #F5F5F5;
+	box-shadow: .25em .25em 1em rgba(0,0,0,.5);
+	border-radius: 1em 0 1em 0;
+	padding: 0;
 	@media screen and (max-width:768px) {
 		width: 100%;
 	}
@@ -29,29 +37,35 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	border: 1px solid #000;
+	border-top: .25em solid $color-blue;
+	border-bottom: .25em solid $color-blue;
 	padding: 1em 0 1em 1em;
 	&:first-of-type {
 		border-radius: 1em 0 0 0;
+		border-top: none;
 	}
 	&:last-of-type {
 		border-radius: 0 0 1em 0;
+		border-bottom: none;
 	}
 	&:not(:last-of-type) {
 		border-bottom: 0;
 	}
 	.teamweek {
-		flex: 1 0 200px;;
+		flex: 1 0 200px;
+		@include flex(flex-start, space-between);
 	}
 	.teamweek-task-title, .teamweek-project {
 		margin: 0 1em 0 0;
 	}
 	.teamweek-task-title {
 		font-family:$font-cond;
+
 	}
 	.teamweek-project {
 		font-family: $font-cond;
 		font-weight: 300;
+		margin: .20em 0 0 0
 	}
 	.teamweek-checkboxes {
 		display: flex;
@@ -62,24 +76,34 @@ body {
 			flex: 100%;
 			font-family: $font-mono;
 			font-size: 14px;
+			padding: .25em 0;
 		}
 		.done {
 			text-decoration:strikethrough;
 		}
 	}
 	.toggl {
-		cursor: pointer;
+		cursor: pointer; 
+		background: $color-blue;
+		color: #fff;
 		flex: 0 0 auto;
 		cursor: pointer;
 		text-align: center;
-		border: 1px solid black;
-		border-right: none;
 		padding: .5em;
+		margin: 0 0 0 .5em;
+		transition: .1s;
+		border-radius: .5em 0px 0px .5em;
+		&:hover, &.fa-pause-circle {
+			box-shadow: inset 2px 2px 4px rgba(0,0,0,.5);
+		}
+		&.fa-pause-circle {
+			background: $color-blue-light;
+		}
 	}
 }
 .fa-play-circle {
-	color: #007920;
+	//color: #007920;
 }
 .fa-pause-circle {
-	color: #df1a21;
+	//color: #df1a21;
 }

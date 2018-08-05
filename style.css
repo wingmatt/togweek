@@ -4,10 +4,15 @@ body {
   align-items: center;
   height: 100vh;
   font-family: "Roboto", sans-serif;
-  font-size: 16px; }
+  font-size: 16px;
+  line-height: 1; }
 
 #task-list {
-  width: 50%; }
+  width: 50%;
+  background: #F5F5F5;
+  box-shadow: 0.25em 0.25em 1em rgba(0, 0, 0, 0.5);
+  border-radius: 1em 0 1em 0;
+  padding: 0; }
   @media screen and (max-width: 768px) {
     #task-list {
       width: 100%; } }
@@ -17,23 +22,31 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border: 1px solid #000;
+  border-top: 0.25em solid #0f4c85;
+  border-bottom: 0.25em solid #0f4c85;
   padding: 1em 0 1em 1em; }
   .task:first-of-type {
-    border-radius: 1em 0 0 0; }
+    border-radius: 1em 0 0 0;
+    border-top: none; }
   .task:last-of-type {
-    border-radius: 0 0 1em 0; }
+    border-radius: 0 0 1em 0;
+    border-bottom: none; }
   .task:not(:last-of-type) {
     border-bottom: 0; }
   .task .teamweek {
-    flex: 1 0 200px; }
+    flex: 1 0 200px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: space-between;
+    flex-flow: wrap; }
   .task .teamweek-task-title, .task .teamweek-project {
     margin: 0 1em 0 0; }
   .task .teamweek-task-title {
     font-family: "Roboto Condensed", sans-serif; }
   .task .teamweek-project {
     font-family: "Roboto Condensed", sans-serif;
-    font-weight: 300; }
+    font-weight: 300;
+    margin: 0.2em 0 0 0; }
   .task .teamweek-checkboxes {
     display: flex;
     flex-flow: column wrap;
@@ -42,22 +55,24 @@ body {
     .task .teamweek-checkboxes .todo {
       flex: 100%;
       font-family: "Roboto Mono", monospace;
-      font-size: 14px; }
+      font-size: 14px;
+      padding: .25em 0; }
     .task .teamweek-checkboxes .done {
       text-decoration: strikethrough; }
   .task .toggl {
     cursor: pointer;
+    background: #0f4c85;
+    color: #fff;
     flex: 0 0 auto;
     cursor: pointer;
     text-align: center;
-    border: 1px solid black;
-    border-right: none;
-    padding: .5em; }
-
-.fa-play-circle {
-  color: #007920; }
-
-.fa-pause-circle {
-  color: #df1a21; }
+    padding: .5em;
+    margin: 0 0 0 .5em;
+    transition: .1s;
+    border-radius: .5em 0px 0px .5em; }
+    .task .toggl:hover, .task .toggl.fa-pause-circle {
+      box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.5); }
+    .task .toggl.fa-pause-circle {
+      background: #197FDF; }
 
 /*# sourceMappingURL=style.css.map */
