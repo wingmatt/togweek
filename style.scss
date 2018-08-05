@@ -32,10 +32,10 @@ body {
 	border: 1px solid #000;
 	padding: 1em 0 1em 1em;
 	&:first-of-type {
-		border-radius: 4px 4px 0 0;
+		border-radius: 1em 0 0 0;
 	}
 	&:last-of-type {
-		border-radius: 0 0 4px 4px;
+		border-radius: 0 0 1em 0;
 	}
 	&:not(:last-of-type) {
 		border-bottom: 0;
@@ -43,17 +43,21 @@ body {
 	.teamweek {
 		flex: 1 0 200px;;
 	}
+	.teamweek-task-title, .teamweek-project {
+		margin: 0 1em 0 0;
+	}
 	.teamweek-task-title {
 		font-family:$font-cond;
 	}
-	.teamweek-task-title, .teamweek-project {
-		margin: 0 16px 0 0;
+	.teamweek-project {
+		font-family: $font-cond;
+		font-weight: 300;
 	}
 	.teamweek-checkboxes {
 		display: flex;
 		flex-flow: column wrap;
 		justify-content: center;
-		flex: 1;
+		flex: 2 1 400px;
 		.todo {
 			flex: 100%;
 			font-family: $font-mono;
@@ -65,6 +69,12 @@ body {
 	}
 	.toggl {
 		cursor: pointer;
+		flex: 0 0 auto;
+		cursor: pointer;
+		text-align: center;
+		border: 1px solid black;
+		border-right: none;
+		padding: .5em;
 	}
 }
 .fa-play-circle {
