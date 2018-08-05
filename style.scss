@@ -1,19 +1,36 @@
+$font-main: 'Roboto', sans-serif;
+$font-cond: 'Roboto Condensed', sans-serif;
+$font-mono: 'Roboto Mono', monospace;
+
+@mixin flex($h-align:center, $v-align:center, $wrap:wrap) {
+	display: flex;
+	justify-content: $h-align;
+	align-items: $v-align;
+	flex-flow:$wrap;
+}
+
 body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	height: 100vh;
+	font-family: $font-main;
+	font-size: 16px;
 }
 	#task-list {
-	width: 750px;
+	width: 50%;
+	@media screen and (max-width:768px) {
+		width: 100%;
+	}
 }
 .task {
+
 	list-style: none;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	border: 1px solid #000;
-	padding: 16px;
+	padding: 1em 0 1em 1em;
 	&:first-of-type {
 		border-radius: 4px 4px 0 0;
 	}
@@ -24,7 +41,10 @@ body {
 		border-bottom: 0;
 	}
 	.teamweek {
-		width: 200px;
+		flex: 1 0 200px;;
+	}
+	.teamweek-task-title {
+		font-family:$font-cond;
 	}
 	.teamweek-task-title, .teamweek-project {
 		margin: 0 16px 0 0;
@@ -36,6 +56,8 @@ body {
 		flex: 1;
 		.todo {
 			flex: 100%;
+			font-family: $font-mono;
+			font-size: 14px;
 		}
 		.done {
 			text-decoration:strikethrough;

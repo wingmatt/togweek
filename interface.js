@@ -7,8 +7,8 @@ $(".toggl-stop").click(function(){
 	$(this).siblings(".toggl-start").toggle(true);
 });
 $(".todo").click(function(){
-	console.log($(this).find("[type=checkbox]").checked);
-	if ($(this.find("[type=checkbox]").checked)) {
+	console.log($(this).find("[type=checkbox]")[0].checked);
+	if ($(this).find("[type=checkbox]")[0].checked) {
 		$(this).addClass("done");
 		console.log('DONE');
 	} else {
