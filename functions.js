@@ -173,25 +173,3 @@ var tasks = [
 	    "updated_at": "2016-01-01T00:00:00.00Z+00:00"
 	  }
 	];
-
-
-
-Vue.component('task', {
-	props: {
-		task: Object
-	},
-	template: `
-	<li id="task-3" class="task" v-bind:style="{ borderLeftColor: task.color}">
-		<div class="teamweek"><h2 class="teamweek-task-title" >{{task.name}}</h2>
-			<h3 class="teamweek-project">{{task.project.name}}</h3></div>
-		<i class="toggl toggl-start fas fa-play-circle fa-2x"></i>
-		<i style="display:none" class="toggl toggl-stop fas fa-pause-circle fa-2x"></i>
-	</li>
-	`
-});
-var app = new Vue({
-  el: '#task-list',
-  data: {
-  		tasks
-	}
-});
