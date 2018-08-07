@@ -41,6 +41,7 @@ body {
 	justify-content: space-between;
 	border-top: .25em solid $color-blue;
 	border-bottom: .25em solid $color-blue;
+	border-left: .25em solid transparent;
 	padding: 1em 0 1em 1em;
 	&:first-of-type {
 		//border-radius: 1em 0 0 0;

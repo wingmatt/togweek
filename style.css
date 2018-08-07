@@ -25,6 +25,7 @@ body {
   justify-content: space-between;
   border-top: 0.25em solid #0f4c85;
   border-bottom: 0.25em solid #0f4c85;
+  border-left: .25em solid transparent;
   padding: 1em 0 1em 1em; }
   .task:first-of-type {
     border-top: none; }

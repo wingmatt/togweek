@@ -113,7 +113,7 @@ function parseTeamweek (rawData) {
 
 // Vue starts here
 
-const tasks = [
+var tasks = [
 	  {
 	    "id": 1,
 	    "name": "Act like muppet",
@@ -142,6 +142,35 @@ const tasks = [
 	    },
 	    "created_at": "2016-01-01T00:00:00.00Z+00:00",
 	    "updated_at": "2016-01-01T00:00:00.00Z+00:00"
+	  },
+	  {
+	    "id": 2,
+	    "name": "Do some cool stuff",
+	    "notes": "must try hard",
+	    "start_date": "2016-01-01",
+	    "end_date": "2016-01-01",
+	    "start_time": "12:00",
+	    "end_time": "13:00",
+	    "color": "#673AB7",
+	    "color_id": 1,
+	    "estimated_hours": "3.5",
+	    "estimated_minutes": "210",
+	    "done": false,
+	    "user_id": 1,
+	    "folder_id": 1,
+	    "position": 1,
+	    "weight": 1,
+	    "project": {
+	      "id": 1,
+	      "name": "Important Thing",
+	      "archived": false,
+	      "color": "#673AB7",
+	      "color_id": 1,
+	      "created_at": "2016-01-01T00:00:00.00Z+00:00",
+	      "updated_at": "2016-01-01T00:00:00.00Z+00:00"
+	    },
+	    "created_at": "2016-01-01T00:00:00.00Z+00:00",
+	    "updated_at": "2016-01-01T00:00:00.00Z+00:00"
 	  }
 	];
 
@@ -152,14 +181,13 @@ Vue.component('task', {
 		task: Object
 	},
 	template: `
-	<li id="task-3" class="task">
-		<div class="teamweek"><h2 class="teamweek-task-title">{{task.name}}</h2>
+	<li id="task-3" class="task" v-bind:style="{ borderLeftColor: task.color}">
+		<div class="teamweek"><h2 class="teamweek-task-title" >{{task.name}}</h2>
 			<h3 class="teamweek-project">{{task.project.name}}</h3></div>
 		<i class="toggl toggl-start fas fa-play-circle fa-2x"></i>
 		<i style="display:none" class="toggl toggl-stop fas fa-pause-circle fa-2x"></i>
 	</li>
 	`
-
 });
 var app = new Vue({
   el: '#task-list',
