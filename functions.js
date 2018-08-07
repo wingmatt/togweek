@@ -12,7 +12,9 @@ https://teamweek.com/api/v4/1/tasks/timeline?since=&until=&users=&projects=&task
 function fetchTeamweek(auth){
 	var taskArray = [];
 	var today  = new Date();
-	var getJqxhr = $.get("example-response.json", '', parseTeamweek(response));
+	//var getJqxhr = $.get("example-response.json", '', parseTeamweek(response));
+	console.log(JSON.stringify(getJqxhr));
+	/* When we're doing real stuff:
 	var postUrl = "https://teamweek.com/api/v4/1/tasks/timeline?since=" + today + "&until" + today + "&users=ME";
 	var jqxhr = $.post( "example.php", function(key, value) {
 	  $(rawData).each(parseTeamweek(value));
@@ -35,8 +37,12 @@ function fetchTeamweek(auth){
 	jqxhr.always(function() {
 	  alert( "second finished" );
 	});
+	*/
 }
+// Check Teamweek API key and assign it to local storage
 
+// TW Button behavior
+$("#fetch-teamweek").click(fetchTeamweek);
 
 
 
@@ -75,9 +81,20 @@ function fetchTeamweek(auth){
 ]
 
 ----------------------------------------------------*/
-
+// Choose text color based on hex code, return light or dark hex code
+function pickTextColorBasedOnBgColorSimple(bgColor, lightColor, darkColor) {
+  var color = (bgColor.charAt(0) === '#') ? bgColor.substring(1, 7) : bgColor;
+  var r = parseInt(color.substring(0, 2), 16); // hexToR
+  var g = parseInt(color.substring(2, 4), 16); // hexToG
+  var b = parseInt(color.substring(4, 6), 16); // hexToB
+  return (((r * 0.299) + (g * 0.587) + (b * 0.114)) > 186) ?
+    darkColor : lightColor;
+}
 // Format JSON response. Hoo boy
 function parseTeamweek (rawData) {
+	for (data in rawData) {
+		
+	}
 	var name = rawData.name;
 	var notes = rawData.notes;
 	var color = rawData.color;
@@ -86,8 +103,9 @@ function parseTeamweek (rawData) {
 	var projColor = rawData.project.color;
 	var done = rawData.project.done;
 	var user = rawData.user_id;
+	console.log("OK");
 }
-
+parseTeamweek(jsonData);
 // Save entered API keys locally
 
 // Load saved API keys on pageload

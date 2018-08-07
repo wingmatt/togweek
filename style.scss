@@ -20,13 +20,13 @@ body {
 	font-family: $font-main;
 	font-size: 16px;
 	line-height: 1;
-	background: url('/img/funky-lines.png') repeat;
+	background: url('img/funky-lines.png') repeat;
 }
 	#task-list {
 	width: 50%;
 	background: #F5F5F5;
 	box-shadow: .25em .25em 1em rgba(0,0,0,.5);
-	border-radius: 1em 0 1em 0;
+	//border-radius: 1em 0 1em 0;
 	padding: 0;
 	position: relative;
 	@media screen and (max-width:768px) {
@@ -43,11 +43,11 @@ body {
 	border-bottom: .25em solid $color-blue;
 	padding: 1em 0 1em 1em;
 	&:first-of-type {
-		border-radius: 1em 0 0 0;
+		//border-radius: 1em 0 0 0;
 		border-top: none;
 	}
 	&:last-of-type {
-		border-radius: 0 0 1em 0;
+		//border-radius: 0 0 1em 0;
 		border-bottom: none;
 	}
 	&:not(:last-of-type) {
@@ -94,7 +94,7 @@ body {
 		padding: .5em;
 		margin: 0 0 0 .5em;
 		transition: .1s;
-		border-radius: .5em 0px 0px .5em;
+		border-radius: 1em 0px 0px 1em;
 		&:hover, &.fa-pause-circle {
 			box-shadow: inset 2px 2px 4px rgba(0,0,0,.5);
 		}
@@ -114,8 +114,8 @@ body {
 	top: -2.5em;
 	width: 100%;
 	text-align: center;
-	font-family: $font-cond;
-	font-weight: 300;
+	font-family: $font-main;
+	font-weight: 100;
 	text-shadow: 1px 2px 3px rgba(0,0,0,.25);
 	font-size: 3em;
 }
@@ -130,6 +130,7 @@ body {
 	position: fixed;
 	bottom: 0;
 	right: 40%;
+	z-index: 42;
 }
 
 input[type='checkbox']#collapsible {
@@ -139,15 +140,15 @@ input[type='checkbox']#collapsible {
 .lbl-toggle {
   display: block;
 
-  font-weight: bold;
-  font-family: monospace;
+  font-family: $font-cond;
+  text-transform: uppercase;
   font-size: 14px;
   text-align: center;
 
   padding: 8px;
 
   color: #fff;
-  background:#007497;
+  background:$color-blue;
 
   cursor: pointer;
 
@@ -155,7 +156,7 @@ input[type='checkbox']#collapsible {
 }
 
 .lbl-toggle:hover {
-  background: #16b1e0;
+  background: $color-blue-light;
 }
 
 
@@ -176,7 +177,7 @@ input[type='checkbox']#collapsible {
 }
 
 .collapsible-content .content-inner {
-  background: #007497;
+  background: $color-blue;
   border-bottom: 1px solid rgba(250, 224, 66, .45);
   padding: .5rem 1rem;
 	color: #fff;
@@ -197,4 +198,13 @@ input[type='checkbox']#collapsible {
 	color: #fff;
 	display: block;
 	padding: 4px;
+	padding: 8px 16px;
+}
+
+#api-keys div {
+	flex: 100%;
+	margin: 8px 0;
+}
+#api-keys .buttons {
+	@include flex(space-evenly);
 }

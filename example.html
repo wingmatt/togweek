@@ -2,7 +2,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="style.min.css">
+		<link rel="stylesheet" href="style.css">
 		<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300|Roboto:100,400|Roboto+Mono:500" rel="stylesheet"> 
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -18,19 +18,27 @@
 		        Enter your API Keys to make this work:
 		      </p>
 					<form id="api-keys">
-						<label for="field-teamweek-api">Teamweek API Key</label>
-						<input type="text" id="field-teamweek-api">
-						<label for="field-toggl-api">Toggl API Key</label>
-						<input type="text" id="field-toggl-api">
-						<button type="submit">
-							<i class="fas fa-hdd"></i>&nbsp;Save
-						</button>
+						<div>
+							<label for="field-teamweek-api">Teamweek API Key</label>
+							<input type="text" id="field-teamweek-api">
+						</div><div>
+							<label for="field-toggl-api">Toggl API Key</label>
+							<input type="text" id="field-toggl-api">
+						</div><div class="buttons">
+							<button type="submit" class="btn action">
+								<i class="fas fa-hdd"></i>&nbsp;Save
+							</button>
+							<button class="btn action" id="fetch-teamweek">
+								<i class="fas fa-sync-alt"></i>&nbsp;Get Tasks
+							</button>
+						</div>
 					</form>
+					
 		    </div>
 		  </div>
 		</div>
 		</div>
-		<ul id="task-list">
+		<ul id="task-list" class="bevel-corners">
 			<h1 id="time"></h1>
 			<li id="task-1" class="task">
 				<div class="teamweek">
@@ -71,7 +79,10 @@
 				<i style="display:none" class="toggl toggl-stop fas fa-pause-circle fa-2x"></i>
 			</li>
 		</ul>
-		<script src="functions.min.js"></script>
-		<script src="interface.min.js"></script>
+		<!-- development version, includes helpful console warnings -->
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script type="text/javascript" src="example-response.json"></script>
+		<script src="functions.js"></script>
+		<script src="interface.js"></script>
 	</body>
 </html>
