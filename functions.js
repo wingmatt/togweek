@@ -105,7 +105,7 @@ function parseTeamweek (rawData) {
 	var user = rawData.user_id;
 	console.log("OK");
 }
-parseTeamweek(jsonData);
+//parseTeamweek(jsonData);
 // Save entered API keys locally
 
 // Load saved API keys on pageload
@@ -113,10 +113,7 @@ parseTeamweek(jsonData);
 
 // Vue starts here
 
-var app = new Vue({
-  el: '#task-list',
-  data: {
-  	fauxResponse: [
+const tasks = [
 	  {
 	    "id": 1,
 	    "name": "Act like muppet",
@@ -146,11 +143,27 @@ var app = new Vue({
 	    "created_at": "2016-01-01T00:00:00.00Z+00:00",
 	    "updated_at": "2016-01-01T00:00:00.00Z+00:00"
 	  }
-	]
-}
-})
+	];
+
+
 
 Vue.component('task', {
-	props: ['task'],
+	props: {
+		task: Object
+	},
+	template: `
+	<li id="task-3" class="task">
+		<div class="teamweek"><h2 class="teamweek-task-title">{{task.name}}</h2>
+			<h3 class="teamweek-project">{{task.project.name}}</h3></div>
+		<i class="toggl toggl-start fas fa-play-circle fa-2x"></i>
+		<i style="display:none" class="toggl toggl-stop fas fa-pause-circle fa-2x"></i>
+	</li>
+	`
 
-})
+});
+var app = new Vue({
+  el: '#task-list',
+  data: {
+  		tasks
+	}
+});
