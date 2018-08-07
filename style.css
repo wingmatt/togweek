@@ -5,7 +5,8 @@ body {
   height: 100vh;
   font-family: "Roboto", sans-serif;
   font-size: 16px;
-  line-height: 1; }
+  line-height: 1;
+  background: url("/img/funky-lines.png") repeat; }
 
 #task-list {
   width: 50%;
@@ -88,10 +89,10 @@ body {
 
 .wrap-collabsible {
   margin-bottom: 1.2rem 0;
-  width: 400px;
+  width: 20%;
   position: fixed;
   bottom: 0;
-  right: 128px; }
+  right: 40%; }
 
 input[type='checkbox']#collapsible {
   display: none; }
@@ -130,7 +131,10 @@ input[type='checkbox']#collapsible {
   color: #fff; }
 
 .content-inner form {
-  display: flex; }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap; }
 
 .content-inner input, button {
   border-radius: 0;

@@ -12,6 +12,7 @@ https://teamweek.com/api/v4/1/tasks/timeline?since=&until=&users=&projects=&task
 function fetchTeamweek(auth){
 	var taskArray = [];
 	var today  = new Date();
+	var getJqxhr = $.get("example-response.json", '', parseTeamweek(response));
 	var postUrl = "https://teamweek.com/api/v4/1/tasks/timeline?since=" + today + "&until" + today + "&users=ME";
 	var jqxhr = $.post( "example.php", function(key, value) {
 	  $(rawData).each(parseTeamweek(value));
@@ -76,7 +77,7 @@ function fetchTeamweek(auth){
 ----------------------------------------------------*/
 
 // Format JSON response. Hoo boy
-function parseTeamweek (i, rawData) {
+function parseTeamweek (rawData) {
 	var name = rawData.name;
 	var notes = rawData.notes;
 	var color = rawData.color;
