@@ -80,6 +80,7 @@ function parseTeamweek (i, rawData) {
 	var name = rawData.name;
 	var notes = rawData.notes;
 	var color = rawData.color;
+	var textColor = pickTextColorBasedOnBgColorSimple(color, '#fff', '#000');
 	var projName = rawData.project.name;
 	var projColor = rawData.project.color;
 	var done = rawData.project.done;
