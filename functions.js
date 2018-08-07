@@ -93,7 +93,7 @@ function pickTextColorBasedOnBgColorSimple(bgColor, lightColor, darkColor) {
 // Format JSON response. Hoo boy
 function parseTeamweek (rawData) {
 	for (data in rawData) {
-		
+
 	}
 	var name = rawData.name;
 	var notes = rawData.notes;
@@ -109,3 +109,48 @@ parseTeamweek(jsonData);
 // Save entered API keys locally
 
 // Load saved API keys on pageload
+
+
+// Vue starts here
+
+var app = new Vue({
+  el: '#task-list',
+  data: {
+  	fauxResponse: [
+	  {
+	    "id": 1,
+	    "name": "Act like muppet",
+	    "notes": "must try hard",
+	    "start_date": "2016-01-01",
+	    "end_date": "2016-01-01",
+	    "start_time": "12:00",
+	    "end_time": "13:00",
+	    "color": "#db9a9a",
+	    "color_id": 1,
+	    "estimated_hours": "3.5",
+	    "estimated_minutes": "210",
+	    "done": false,
+	    "user_id": 1,
+	    "folder_id": 1,
+	    "position": 1,
+	    "weight": 1,
+	    "project": {
+	      "id": 1,
+	      "name": "Quality time",
+	      "archived": false,
+	      "color": "#db9a9a",
+	      "color_id": 1,
+	      "created_at": "2016-01-01T00:00:00.00Z+00:00",
+	      "updated_at": "2016-01-01T00:00:00.00Z+00:00"
+	    },
+	    "created_at": "2016-01-01T00:00:00.00Z+00:00",
+	    "updated_at": "2016-01-01T00:00:00.00Z+00:00"
+	  }
+	]
+}
+})
+
+Vue.component('task', {
+	props: ['task'],
+
+})
