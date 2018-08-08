@@ -173,3 +173,6 @@ var tasks = [
 	    "updated_at": "2016-01-01T00:00:00.00Z+00:00"
 	  }
 	];
+// Method to send the right request to Toggl API on toggl-start click
+
+// Method to send the right request to Toggl API on toggl-stop click

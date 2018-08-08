@@ -21,3 +21,7 @@ function processData() {
         console.log('Combined Data After:' + localStorage.getItem("tw_data"));
     }
 }
+
+// On doc.ready, check if API field is blank. If blank, check for field's ID-equivalent LS entry.
+
+// On save btn click, save API field input to ID-equivalent LS entries as long as they're not blank.

@@ -20,12 +20,21 @@ $(".todo").click(function(){
 	}
 });
 // Get details from teamweek on pageload
+	/*
+    Vue.http.post('twUrl',this.object).then(function(response) {
+        //Success
+        console.log(response.data)
+    }, function(response) {
+		//Error
+        console.log(response.data)
+	});
+	*/
 
 // Get details from Toggl on pageload
+	// Check if any timers are running. Do they match any projects?
+	// If projects match, hide toggl-start and show toggl-stop for matched project
 
 // Display response from teamweek
-
-// Display response from Toggl
 
 // Choose text color based on BG hex code
 
