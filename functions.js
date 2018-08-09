@@ -116,7 +116,7 @@ function parseTeamweek (rawData) {
 var tasks = [
 	  {
 	    "id": 1,
-	    "name": "Act like muppet",
+	    "name": "Do the thing",
 	    "notes": "must try hard",
 	    "start_date": "2016-01-01",
 	    "end_date": "2016-01-01",
@@ -133,7 +133,7 @@ var tasks = [
 	    "weight": 1,
 	    "project": {
 	      "id": 1,
-	      "name": "Quality time",
+	      "name": "Very Important Client",
 	      "archived": false,
 	      "color": "#db9a9a",
 	      "color_id": 1,
@@ -162,7 +162,7 @@ var tasks = [
 	    "weight": 1,
 	    "project": {
 	      "id": 1,
-	      "name": "Important Thing",
+	      "name": "Somewhat important client",
 	      "archived": false,
 	      "color": "#673AB7",
 	      "color_id": 1,

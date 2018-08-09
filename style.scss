@@ -28,6 +28,7 @@ body {
 	box-shadow: .25em .25em 1em rgba(0,0,0,.5);
 	//border-radius: 1em 0 1em 0;
 	padding: 0;
+	margin-top: 7em;
 	position: relative;
 	@media screen and (max-width:768px) {
 		width: 100%;
@@ -163,7 +164,7 @@ input[type='checkbox']#collapsible {
 
 
 .collapsible-content {
-  max-height: 0px;
+  max-height: 0;
   overflow: hidden;
   transition: max-height .25s ease-in-out;
 }
@@ -198,7 +199,6 @@ input[type='checkbox']#collapsible {
 	background: #000;
 	color: #fff;
 	display: block;
-	padding: 4px;
 	padding: 8px 16px;
 }
 
